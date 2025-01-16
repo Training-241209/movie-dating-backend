@@ -33,7 +33,7 @@ import com.moviedating.backend.dtos.GenderPreferenceDTO;
 
 @RestController
 @RequestMapping("/account")
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = "${front.end.url}")
 public class AccountController {
 
     @Autowired
