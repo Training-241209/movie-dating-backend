@@ -7,6 +7,7 @@ pipeline{
 		DB_CREDS = credentials('DB_CREDENTIALS')
 		JWT_SECRET = credentials('JWT_SECRET')
 		DB_URL = credentials('DB_URL')
+		FRONT_END_URL = credentials('FRONT_END_URL')
 	}
 	
 	stages {
@@ -41,6 +42,7 @@ pipeline{
 						-e SPRING_DATASOURCE_USERNAME=${DB_CREDS_USR} \
 						-e SPRING_DATASOURCE_PASSWORD=${DB_CREDS_PSW} \
 						-e JWT_SECRET=${JWT_SECRET} \
+						-e FRONT_END_URL=${FRONT_END_URL} \
 						--restart unless-stopped \
 						${DOCKER_IMAGE}:${DOCKER_TAG}
 					"""
